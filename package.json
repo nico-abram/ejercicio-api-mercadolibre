@@ -1,0 +1,38 @@
+{
+	"name": "ejercicio-api-mercadolibre",
+	"version": "0.1.0",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/nico-abram/ejercicio-api-mercadolibre"
+	},
+	"dependencies": {
+		"request": "^2.88.0"
+	},
+	"contributors": [
+		{
+			"name": "Nicolas Abram Lujan",
+			"email": "abramlujan@gmail.com"
+		}
+	],
+	"author": "Nicolas Abram Lujan",
+	"license": "MIT",
+	"scripts": {
+		"lint": "eslint --fix **/*.js",
+		"format": "prettier --write **/*.{js,json,md}",
+		"postinstall": "yarn run build",
+		"start": "node index.js"
+	},
+	"husky": {
+		"pre-commit": "lint-staged"
+	},
+	"lint-staged": {
+		"*.{j,t}s": [
+			"eslint --fix",
+			"git add"
+		],
+		"*.{json,md,yml}": [
+			"prettier --write",
+			"git add"
+		]
+	}
+}
